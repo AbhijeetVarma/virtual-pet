@@ -37,8 +37,8 @@ if(keyDown("up")){
 
   drawSprites();
   fill("white")
-   // textSize(20)
-   // text("Food Left: "+ foodS,100,100)
+    textSize(20)
+    text("Food Left: "+ foodS,100,100)
   //add styles here
 
 }
