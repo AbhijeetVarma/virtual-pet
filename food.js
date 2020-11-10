@@ -1,42 +1,40 @@
 class Food{
 constructor(){
     this.image = loadImage("Milk.png")
-    this.foodStock = null
+    this.foodStock = 0
     this.lastFed = null;
+    
 }
 
 getFoodStock(){
-  var getStockref = database.ref('food')
-  getStockref.on("value", function (data){
-      foodStock = data.val();
-  })
+ return this.foodStock
 }
 
 updateFoodStock(food){
-  database.ref('/').update({
-      foodStock:food
-  })
+ 
+      this.foodStock=food
+  console.log(this.foodStock)
 }
 
 
 
 display(){
-
+    background(46,149,87)
     var x=80
     var y = 100
 
-    //imageMode(CENTER);
+    imageMode(CENTER);
     //image(this.image,720,200,70,70)
-
+    
     if(foodStock!== 0){
 
-        for(var i =0;i>this.foodStock;i++){
+        for(var i =0;i<this.foodStock;i++){
             if(i%10 === 0){
                 x= 80
                 y=y+50
             }
             image(this.image,x,y,70,70)
-            x=x+70
+            x=x+40
         }
 
 
@@ -44,6 +42,17 @@ display(){
     }
     
 }
+
+
+bedroom(){
+   background(bed,500,250) 
+}
+garden(){
+    background(gar,1000,500) 
+ }
+ washroom(){
+    background(wash,1200,500) 
+ }
 
 
 
